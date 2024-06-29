@@ -187,11 +187,11 @@ namespace HostsAutoUpdater {
             string pathBlockList = "blocklist.txt";
 
             if(!File.Exists(pathAllowList)) {
-                File.Create(pathAllowList);
+                File.Create(pathAllowList).Close();
             }
 
             if(!File.Exists(pathBlockList)) {
-                File.Create(pathBlockList);
+                File.Create(pathBlockList).Close();
             }
 
             if(doSchedule) {
